@@ -7807,6 +7807,23 @@ a.anchor-link {
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=42372493">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Ryhmä 2</p>
+<ul>
+<li>Elias Eide</li>
+<li>Miska Voutilainen</li>
+<li>Taif Jalo</li>
+<li>Veijo Kasanen</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cnn-01">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8341,7 +8358,6 @@ external/xla/xla/stream_executor/cuda/cuda_status.cc:50
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>352/352 - 21s - 60ms/step - accuracy: 0.4724 - loss: 1.4810 - val_accuracy: 0.5614 - val_loss: 1.2889 - learning_rate: 0.0010
 Epoch 2/60
-Epoch 2/60
 352/352 - 18s - 52ms/step - accuracy: 0.6183 - loss: 1.0987 - val_accuracy: 0.6236 - val_loss: 1.1345 - learning_rate: 0.0010
 Epoch 3/60
 352/352 - 18s - 51ms/step - accuracy: 0.6711 - loss: 0.9547 - val_accuracy: 0.6608 - val_loss: 1.0250 - learning_rate: 0.0010
@@ -8417,7 +8433,6 @@ Epoch 18/60
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>352/352 - 178s - 506ms/step - accuracy: 0.4416 - loss: 1.5242 - val_accuracy: 0.4720 - val_loss: 1.3965 - learning_rate: 0.0010
-Epoch 2/60
 Epoch 2/60
 352/352 - 170s - 483ms/step - accuracy: 0.5870 - loss: 1.1472 - val_accuracy: 0.5984 - val_loss: 1.1191 - learning_rate: 0.0010
 Epoch 3/60
@@ -8562,7 +8577,6 @@ Epoch 52/60
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>352/352 - 150s - 426ms/step - accuracy: 0.3969 - loss: 1.6421 - val_accuracy: 0.4676 - val_loss: 1.4379 - learning_rate: 0.0010
-Epoch 2/60
 Epoch 2/60
 352/352 - 200s - 568ms/step - accuracy: 0.5426 - loss: 1.2708 - val_accuracy: 0.5570 - val_loss: 1.2771 - learning_rate: 0.0010
 Epoch 3/60
@@ -8734,8 +8748,6 @@ Epoch 54/60
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Testitulokset">Testitulokset<a class="anchor-link" href="#Testitulokset">¶</a></h2><p>Taulukko näyttää kunkin CNN-mallin testitarkkuuden, parametrien määrän, opetusajan ja epookkien määrän. Testidataa käytetään vain tässä lopullisessa arvioinnissa.</p>
-<p>Jokainen parannus nostaa tarkkuutta: syvempi verkko regularisoinnilla parantaa perusmallista selvästi, ja augmentaatio parantaa vielä lisää, koska se vähentää ylisovittumista ja opettaa sijainnin ja suunnan muutoksia sietäviä piirteitä. Augmentaatiomallin koulutus kestää yleensä pisimpään, koska se oppii pidempään ennen kuin early stopping pysäyttää sen. Alla olevassa solussa tuloksia verrataan tehtävänannon tavoitteisiin.</p>
-<p>Parasta mallia (augmentaatio) tarkastellaan sen jälkeen luokittain. Kuten FCN:ssä, ajoneuvot ja laiva tunnistetaan parhaiten ja kissa on vaikein luokka; suurin sekaannus on kissan ja koiran välillä. Ero FCN:ään on kuitenkin selvä: diagonaali on huomattavasti vahvempi kaikissa luokissa.</p>
 </div>
 </div>
 </div>
@@ -8796,6 +8808,17 @@ Epoch 54/60
 cnn_aug      tarkkuus 0.8651 | parametrit 306,154 | aika 9695 s | epookit 54
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a285b057">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Syvempi verkko, jossa on Batch Normalization ja Dropout, parantaa perusmallista selvästi (69,4 % → 86,7 %). Data-augmentaatio ei kuitenkaan parantanut testitarkkuutta (86,6 % vs. 86,7 %). Ero on 0,2 prosenttiyksikköä ja siis kohinan sisällä, koska kumpikin malli on koulutettu vain kerran. Augmentaatiolla oli silti vaikutusta oppimiseen: opetus- ja validaatiotarkkuuden ero pieneni (noin 0 yksikköä vs. noin 5 yksikköä), eli malli ylisovittui vähemmän. Testitarkkuus ei silti noussut.</p>
 </div>
 </div>
 </div>
@@ -9229,12 +9252,31 @@ cnn_aug             0.8651      306,154      9695       54
 <p><strong>Johtopäätökset</strong></p>
 <ul>
 <li>CNN on selvästi FCN:ää parempi CIFAR-10-datalle kaikilla mittareilla opetusaikaa lukuun ottamatta, ja se saavuttaa paremman tuloksen pienemmällä parametrimäärällä.</li>
-<li>Mallien kehitys osoittaa, että jokaisella parannuksella on oma vaikutuksensa: syvyys ja BatchNorm lisäävät mallin kapasiteettia ja vakauttavat koulutusta, Dropout ja augmentaatio vähentävät ylisovittumista. Suurimmat yksittäiset hyödyt tulevat siirtymisestä FCN:stä konvoluutioon sekä augmentaatiosta.</li>
-<li>Molemmissa verkoissa vaikeimmat luokat ovat samat (kissa, koira, lintu, peura), mutta CNN tekee niissäkin huomattavasti vähemmän virheitä. Jäljelle jääneet virheet ovat usein aidosti vaikeita tapauksia, joissa kuva on epäselvä tai kohde pieni.</li>
+<li>Suurin yksittäinen hyöty tuli siirtymisestä FCN:stä konvoluutioon ja sen jälkeen syvemmästä rakenteesta, BatchNormista ja Dropoutista. Augmentaatio vähensi ylisovittumista mutta ei parantanut testitarkkuutta tässä kokeessa.</li>
+<li>Molemmissa verkoissa vaikeimmat luokat ovat samat (kissa, koira, lintu), mutta CNN tekee niissäkin huomattavasti vähemmän virheitä. Jäljelle jääneet virheet ovat usein aidosti vaikeita tapauksia, joissa kuva on epäselvä tai kohde pieni.</li>
 <li>Mallin varmuus kertoo jotain sen luotettavuudesta: väärät ennusteet ovat keskimäärin epävarmempia kuin oikeat.</li>
 </ul>
 <p><strong>Jatkokehitysideoita</strong>
 Tarkkuutta voisi parantaa edelleen esimerkiksi syvemmällä verkolla tai residuaaliyhteyksillä (ResNet), voimakkaammalla augmentaatiolla (Cutout, Mixup, satunnainen rajaus), oppimisnopeuden aikataulutuksella (cosine decay, one-cycle), L2-regularisoinnilla sekä usean mallin ensemblella. Myös siirto-oppiminen esikoulutetusta verkosta toisi todennäköisesti selvän parannuksen.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4d9211ad">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Teko%C3%A4lyn-k%C3%A4yt%C3%B6n-dokumentointi">Tekoälyn käytön dokumentointi<a class="anchor-link" href="#Teko%C3%A4lyn-k%C3%A4yt%C3%B6n-dokumentointi">¶</a></h2><p>Projektin tekemisessä käytettiin GitHub Copilotia tekoälyavusteisena työkaluna. Sitä käytettiin seuraaviin tukitehtäviin:</p>
+<ul>
+<li>notebookien rakenteen ja tehtävänannon vaatimusten tarkistamiseen</li>
+<li>FCN- ja CNN-arkkitehtuurien sekä kokeilujen ideoimiseen</li>
+<li>Keras- ja TensorFlow-koodiin liittyvien vaihtoehtojen selvittämiseen</li>
+<li>visualisointien ja tulosten analysoinnin suunnitteluun</li>
+<li>koodivirheiden selvittämiseen ja koodin selkeyttämiseen</li>
+</ul>
+<p>Tekoäly ei tuottanut projektin mittaustuloksia. Mallit koulutettiin ja testattiin itse CIFAR-10-datalla, ja tarkkuudet, parametrimäärät, opetusajat sekä kuvat perustuvat notebookien omiin suorituksiin. Ryhmä tarkisti, muokkasi ja ymmärsi kaiken lopullisen koodin sekä vastaa itse tulosten tulkinnasta ja johtopäätöksistä. Tekoälyä käytettiin siis työskentelyn tukena, ei oman ymmärryksen tai raportoinnin korvaajana.</p>
 </div>
 </div>
 </div>
