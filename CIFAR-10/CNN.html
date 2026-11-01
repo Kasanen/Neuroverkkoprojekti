@@ -8818,7 +8818,7 @@ cnn_aug      tarkkuus 0.8651 | parametrit 306,154 | aika 9695 s | epookit 54
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Syvempi verkko, jossa on Batch Normalization ja Dropout, parantaa perusmallista selvästi (69,4 % → 86,7 %). Data-augmentaatio ei kuitenkaan parantanut testitarkkuutta (86,6 % vs. 86,7 %). Ero on 0,2 prosenttiyksikköä ja siis kohinan sisällä, koska kumpikin malli on koulutettu vain kerran. Augmentaatiolla oli silti vaikutusta oppimiseen: opetus- ja validaatiotarkkuuden ero pieneni (noin 0 yksikköä vs. noin 5 yksikköä), eli malli ylisovittui vähemmän. Testitarkkuus ei silti noussut.</p>
+<p>Syvempi verkko, jossa on Batch Normalization ja Dropout, parantaa perusmallista selvästi (69,4 % → 86,7 %). Data-augmentaatio ei kuitenkaan parantanut testitarkkuutta (86,5 % vs. 86,7 %). Ero on 0,2 prosenttiyksikköä ja siis kohinan sisällä, koska kumpikin malli on koulutettu vain kerran. Augmentaatiolla oli silti vaikutusta oppimiseen: opetus- ja validaatiotarkkuuden ero pieneni (noin 0 yksikköä vs. noin 5 yksikköä), eli malli ylisovittui vähemmän. Testitarkkuus ei silti noussut.</p>
 </div>
 </div>
 </div>
@@ -9025,7 +9025,7 @@ weighted avg      0.866     0.865     0.864     10000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">wrong</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">!=</span> <span class="n">y_test</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -9262,13 +9262,50 @@ Tarkkuutta voisi parantaa edelleen esimerkiksi syvemmällä verkolla tai residua
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b62e25e0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<table>
+<thead>
+<tr>
+<th>Malli</th>
+<th>Testitarkkuus</th>
+<th>Parametrit</th>
+<th>Opetusaika</th>
+<th>Tavoite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FCN (paras)</td>
+<td>57,2 %</td>
+<td>3,81 M</td>
+<td>463 s</td>
+<td>kunnianhimoinen (57–60 %)</td>
+</tr>
+<tr>
+<td>CNN (paras)</td>
+<td>86,7 %</td>
+<td>0,31 M</td>
+<td>9 216 s</td>
+<td>kunnianhimoinen (82–85 %)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4d9211ad">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Teko%C3%A4lyn-k%C3%A4yt%C3%B6n-dokumentointi">Tekoälyn käytön dokumentointi<a class="anchor-link" href="#Teko%C3%A4lyn-k%C3%A4yt%C3%B6n-dokumentointi">¶</a></h2><p>Projektin tekemisessä käytettiin GitHub Copilotia tekoälyavusteisena työkaluna. Sitä käytettiin seuraaviin tukitehtäviin:</p>
+<h2 id="Teko%C3%A4lyn-k%C3%A4ytt%C3%B6">Tekoälyn käyttö<a class="anchor-link" href="#Teko%C3%A4lyn-k%C3%A4ytt%C3%B6">¶</a></h2><p>Projektin tekemisessä käytettiin GitHub Copilotia ja Claudea tekoälyavusteisena työkaluna. Sitä käytettiin seuraaviin tukitehtäviin:</p>
 <ul>
 <li>notebookien rakenteen ja tehtävänannon vaatimusten tarkistamiseen</li>
 <li>FCN- ja CNN-arkkitehtuurien sekä kokeilujen ideoimiseen</li>
