@@ -12,7 +12,7 @@ Tuloksena syntyvä rakenne:
 
     dataset/
         train/<luokka>/*.jpg
-        val/<luokka>/*.jpg
+        validation/<luokka>/*.jpg
         test/<luokka>/*.jpg
         stats.json            (train-datan keskiarvo ja keskihajonta per kanava)
         arrays/               (normalisoidut numpy-taulukot: X_train.npy, y_train.npy, ...)
@@ -80,7 +80,7 @@ def main():
     rng = random.Random(args.seed)
 
     # 1) Hakemistorakenne
-    for split in ("train", "val", "test"):
+    for split in ("train", "validation", "test"):
         for c in classes:
             (dst / split / c).mkdir(parents=True, exist_ok=True)
 
@@ -91,7 +91,7 @@ def main():
         if len(files) < 50:
             print(f"  Varoitus: luokassa '{c}' on vain {len(files)} kuvaa (vaatimus >= 50)")
         tr, va, te = split_indices(len(files), args.train, args.val, rng)
-        for split, ids in (("train", tr), ("val", va), ("test", te)):
+        for split, ids in (("train", tr), ("validation", va), ("test", te)):
             for i in ids:
                 img = preprocess(files[i], args.size)
                 out = dst / split / c / f"{files[i].stem}.jpg"
