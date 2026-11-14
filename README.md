@@ -13,7 +13,7 @@ Testijoukossa on 35 kuvaa, joten yhden kuvan ero on noin 2,9 prosenttiyksikköä
 | 3a | VGG16 jäädytettynä + augmentointi | 97,1 % | 34 |
 | 3b | VGG16, viimeiset 4 kerrosta hienosäädetty | 97,1 % | 34 |
 
-Täydellinen vertailu, haasteet ja pohdinta ovat raporttina [Hienosaadetty-malli.ipynb](Hienosaadetty-malli.ipynb):n lopussa.
+Täydellinen vertailu, haasteet ja pohdinta ovat raportissa [RAPORTTI.md](RAPORTTI.md).
 
 ## Rakenne
 
@@ -27,10 +27,11 @@ dataset/
   split_manifest.csv     mikä kuva meni mihin joukkoon
   arrays/                normalisoidut .npy-taulukot (ei gitissä, luodaan skriptillä)
 scripts/notebook_scripts.py   yhteiset apufunktiot (collect_images, plot_images, plot_confusion_matrix)
+RAPORTTI.md             projektiraportti
 PrepareDataset.py        datan esikäsittely ja jako
 CNN-Malli.ipynb          Malli 1
 Esikoulutettu-Malli.ipynb  Malli 2
-Hienosaadetty-malli.ipynb  Malli 3 + loppuraportti
+Hienosaadetty-malli.ipynb  Malli 3
 ```
 
 ## Dataset
