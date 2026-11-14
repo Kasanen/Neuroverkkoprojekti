@@ -62,3 +62,15 @@ Keskeiset havainnot:
 **Hienosäädetty VGG16** olisi teoriassa joustavin, koska se voi mukauttaa korkeamman tason piirteitä juuri näihin luokkiin. Tässä aineistossa se ei kuitenkaan parantanut tarkkuutta (97,1 % kuten ennen hienosäätöä), oli laskennallisesti kalliimpi ja kasvatti testihäviötä. Hienosäädöstä olisi todennäköisemmin hyötyä, jos kohdeluokat poikkeaisivat ImageNetin luokista tai aineisto olisi suurempi. Meidän luokkamme (haarukka, muki, lautanen jne.) ovat hyvin lähellä ImageNetin sisältöä.
 
 **Johtopäätös:** tämän projektin ongelmaan (5 selkeää esineluokkaa, pieni aineisto) paras valinta on esikoulutettu VGG16 piirteenirrotuksella. Se on yksinkertaisin ratkaisu ja yhtä tarkka kuin monimutkaisempi hienosäädetty malli. Tärkeimmät jatkokehityskohteet ovat (1) enemmän ja monipuolisempia kuvia (taustat, valaistus, kuvakulmat), (2) ristiinvalidointi, (3) virhematriisien ja luokkakohtaisten mittareiden hyödyntäminen ja (4) kevyempi esikoulutettu malli (esim. MobileNet) mobiilikäyttöön.
+
+## 5. Tekoälyn käyttö
+
+Projektin tekemisessä käytettiin GitHub Copilotia ja Claudea tekoälyavusteisena työkaluna. Sitä käytettiin seuraaviin tukitehtäviin:
+
+- notebookien rakenteen ja tehtävänannon vaatimusten tarkistamiseen
+- CNN-arkkitehtuurien ja kokeilujen ideoimiseen
+- Keras- ja TensorFlow-koodiin liittyvien vaihtoehtojen selvittämiseen
+- visualisointien ja tulosten analysoinnin suunnitteluun
+- koodivirheiden selvittämiseen ja koodin selkeyttämiseen
+
+Tekoäly ei tuottanut projektin mittaustuloksia. Mallit koulutettiin ja testattiin itse omalla kuva-aineistolla, ja tarkkuudet, parametrimäärät, opetusajat sekä kuvat perustuvat notebookien omiin suorituksiin. Ryhmä tarkisti, muokkasi ja ymmärsi kaiken lopullisen koodin sekä vastaa itse tulosten tulkinnasta ja johtopäätöksistä. Tekoälyä käytettiin siis työskentelyn tukena, ei oman ymmärryksen tai raportoinnin korvaajana.
