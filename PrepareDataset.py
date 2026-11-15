@@ -128,7 +128,7 @@ def main():
     if not args.no_arrays:
         arr_dir = dst / "arrays"
         arr_dir.mkdir(exist_ok=True)
-        for split in ("train", "val", "test"):
+        for split in ("train", "validation", "test"):
             X, y = (X_train, y_train) if split == "train" else load_split(split)
             X = (X - mean) / std  # standardointi train-tilastoilla
             np.save(arr_dir / f"X_{split}.npy", X.astype(np.float32))
