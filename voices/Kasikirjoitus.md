@@ -4,7 +4,7 @@
 
 Suomen luonto on kauneimmillaan kesällä, kun yöt ovat valoisia ja järvet tyyniä. Moni suomalainen viettää loman mökillä uiden, saunoen ja kalastaen. Syksyllä metsät täyttyvät sienestäjistä ja marjastajista, ja ensimmäiset pakkaset tuovat mukanaan kirkkaat tähtitaivaat.
 
-## 2. hali_fi.wav (taustahäly, esim. ruokala, käytävä tai musiikki taustalla)
+## 2. hali_fi.wav (taustahäly, musiikki taustalla)
 
 Huomenna sää on enimmäkseen pilvinen, ja iltapäivällä sataa paikoin vettä. Lämpötila nousee noin kahdeksaantoista asteeseen. Viikonloppuna aurinko näyttäytyy, mutta yöllä lämpötila voi laskea lähelle nollaa. Muistakaa pukeutua lämpimästi, jos lähdette ulos.
 
@@ -12,7 +12,7 @@ Huomenna sää on enimmäkseen pilvinen, ja iltapäivällä sataa paikoin vettä
 
 Suomen luonto on kauneimmillaan kesällä, kun yöt ovat valoisia ja järvet tyyniä. Moni suomalainen viettää loman mökillä uiden, saunoen ja kalastaen. Syksyllä metsät täyttyvät sienestäjistä ja marjastajista, ja ensimmäiset pakkaset tuovat mukanaan kirkkaat tähtitaivaat.
 
-## 4. murre_fi.wav (murre tai vahva puhekieli)
+## 4. murre_fi.wav (vahva puhekieli)
 
 Mä oon tänää menny kauppaan ja ostin maitoo, leipää ja vähän juustoo. Sit mä kävelin kotiin ja kattelin telkkarii koko illan. Huomenna ei oo koulua, joten voin nukkuu pitkään.
 
