@@ -67,3 +67,13 @@ Spektrogrammissa vaaka-akseli on aika ja pystyakseli äänen taajuus. Mel-asteik
 **Vahvuudet.** Attention tarkastelee koko sekvenssiä kerralla, ja sama arkkitehtuuri toimii tekstille ja äänelle. Esikoulutettu malli antaa hyvän tuloksen ilman omaa koulutusta: `small` tunnisti englannin lähes virheettömästi, kun oma pieni mallimme tuotti vain kielen näköistä tekstiä.
 
 **Rajoitukset.** Alusta kouluttaminen vaatii paljon dataa ja laskentaa, ja isompi malli maksaa nopeasti enemmän kuin se tuo (`iso`: 8,7-kertainen aika, perplexity 156 → 81). Mallit hallusinoivat kohinassa, ovat huonompia pienemmillä kielillä (suomen WER oli englantia selvästi korkeampi) ja niiden tarkkuus riippuu koosta, jolloin nopeus ja laatu kilpailevat keskenään. Attentionin kustannus kasvaa sekvenssin pituuden neliönä.
+
+## 6. Tekoälyn käyttö
+
+Projektissa käytettiin Claudea (Claude Code) tekoälyavusteisena työkaluna. Sitä käytettiin seuraaviin tehtäviin:
+
+- notebookien pohjien tekeminen kurssin tukimateriaalin (`Puheentunnistus.ipynb`, `Whisper_simple.ipynb` ja `LLM_Keras_Kalevala_pieni.ipynb`) pohjalta
+- apukoodin kirjoittaminen: WER:n ja CER:n laskenta, kohinakoe, kielentunnistus, mallien vertailutaulukot ja kuvaajat sekä tekstin siivous
+- koodivirheiden selvittäminen (puuttuvat kirjastot, kielentunnistuksen korjaus, tiedostopolut)
+
+Tekoäly ei tuottanut projektin mittaustuloksia. Ryhmä äänitti ääninäytteet, ajoi notebookit ja koulutti mallit itse, ja kaikki luvut (WER, CER, koulutusajat, parametrimäärät ja validation loss) ovat notebookien omista tulosteista. Ryhmä vastaa itse tulosten tulkinnasta ja johtopäätöksistä.
