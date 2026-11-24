@@ -6,8 +6,8 @@ Ryhmä 2: Elias, Miska, Veijo, Taif
 ## Ohjeet (ihmiselle ja Claudelle)
 
 1. Lue koko tiedosto. Valitse ylimmältä rivi, jonka `tila` on `vapaa` ja jonka `vaatii`-tehtävät ovat kaikki `valmis`.
-2. Kun otat tehtävän: kirjoita nimesi kohtaan `ottaja` ja vaihda `tila: vapaa` muotoon `tila: työn alla`.
-3. Kun tehtävä on valmis: vaihda `tila: valmis` ja muuta ruutu `[ ]` muotoon `[x]`.
+2. Kun otat tehtävän: tee ensin `git pull`. Kirjoita nimesi kohtaan `ottaja`, vaihda `tila: vapaa` muotoon `tila: työn alla` ja commitoi ja pushaa varaus heti mainiin omana pienenä commitina. Tee sen jälkeen haara `T07-malli-a` (numero + lyhyt nimi). Näin kaksi ihmistä ei ota samaa tehtävää.
+3. Kun tehtävä on valmis: tee pull request. Toinen jäsen katselmoi sen, ja PR-kuvaukseen kirjoitetaan, kuka osaa selittää koodin. Samassa PR:ssä vaihdetaan `tila: valmis` ja ruutu `[ ]` muotoon `[x]`.
 4. Älä muokkaa muiden `työn alla` -tehtäviä äläkä muuta tehtävien numeroita (`T01`...), koska `vaatii`-viittaukset käyttävät niitä.
 5. Jos tehtävä paljastaa uuden työn, lisää rivi osion loppuun uudella numerolla ja `tila: vapaa`.
 6. Kirjaa tekoälyn käyttö alla olevaan AI-lokiin heti, kun käytät sitä.
@@ -22,7 +22,7 @@ Tavoitteet: baseline (A) ≥ 70 %, paras malli ≥ 85 % tarkkuus ja makro-F1 ≥
 
 Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki käyttävät samaa dataa ja koodia.
 
-- [ ] **T01** Luo GitHub-repo, kansiorakenne, `requirements.txt` ja jaettu Drive-kansio
+- [ ] **T01** Luo uusi GitHub-repo (kaikille neljälle kirjoitusoikeus, `main` suojattu PR:llä), kansiorakenne, `requirements.txt`, `.gitignore` (`data/`, `models/`, `*.npy`, `.ipynb_checkpoints`, `__pycache__`) ja jaettu Drive-kansio. Ensimmäisenä commitina `CLAUDE.md`, `PLAN.md`, `TASKS.md`, `README.md` ja `temp/`-ohjeet
   - vaatii: – · takaraja: to 26.11. · ottaja: – · tila: vapaa
 - [ ] **T02** Lataa ESC-50, suodata eläinluokat (`target` < 10), tarkista 400 leikettä
   - vaatii: T01 · takaraja: to 26.11. · ottaja: – · tila: vapaa
@@ -77,7 +77,7 @@ Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki 
   - vaatii: T18, T19 · takaraja: ke 9.12. · ottaja: – · tila: vapaa
 - [ ] **T22** Tekoälyn käytön dokumentointi (kirjaa koko ajan, viimeistele raporttiin)
   - vaatii: – · takaraja: ke 9.12. · ottaja: – · tila: vapaa
-- [ ] **T23** Esitysdiat (10–15 min) ja harjoitusesitys, kaikki puhuvat
+- [ ] **T23** Esitysdiat (10–15 min) ja harjoitusesitys, kaikki puhuvat. Jokainen esittelee vähintään yhden osan, jonka hän on itse toteuttanut
   - vaatii: T18 · takaraja: ke 9.12. · ottaja: – · tila: vapaa
 
 ## Vaihe 5: Puskuri ja palautus
@@ -94,3 +94,4 @@ Kurssi vaatii tarkan kirjauksen siitä, miten ja missä tekoälyä on käytetty.
 | Päivä | Kuka | Tehtävä | Työkalu | Mitä pyydettiin | Mitä käytettiin ja muutettiin |
 | --- | --- | --- | --- | --- | --- |
 | 24.11.2026 | Veijo | Dokumentaation tarkistus | Claude Code | Vertaa CLAUDE.md, PLAN.md, TASKS.md ja INSTRUCTIONS-short.md tehtävänantoon ja korjaa 7 löydettyä puutetta | Käytettiin tarkistuksen tuloksia. Lisättiin validointifoldi, C1-poikkeus, T25, T17/T20/T21 muutokset ja raportin osiot. Ryhmän pitää tarkistaa muutokset |
+| 24.11.2026 | Veijo | Yhteistyöpohja | Claude Code | Arvioi, toimiiko dokumentaatio neljän hengen työssä ja arvosanatavoitteessa 5 | Käytettiin ehdotuksia: git-työnkulku (varaus, haara, PR), istuntosäännöt, notebook-säännöt, arvosana 5 -tarkistuslista `PLAN.md`:ssä, README. Ryhmän pitää tarkistaa |

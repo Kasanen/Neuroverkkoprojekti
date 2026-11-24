@@ -9,6 +9,7 @@ Tämä tiedosto kertoo, milloin projekti on valmis. Tehtävien tila on `TASKS.md
 - Mallit: A, B, C1, C2. Muiden mallien tai datasettien lisääminen vaatii koko ryhmän päätöksen ja merkinnän muutokseen alla.
 - Datajako: testifoldi k on testi. Validointina on yksi kokonainen opetusfoldi (ei satunnaista osuutta, koska ESC-50:n samasta lähteestä tulevat leikkeet ovat samassa foldissa). Loput kaksi foldia ovat opetusta. EarlyStopping, ReduceLROnPlateau ja KerasTuner käyttävät vain validointifoldia, ja testifoldiin ei kosketa viritysvaiheessa.
 - Poikkeus C1:lle: YAMNet käyttää 16 kHz:n aaltomuotoa ja omaa esikäsittelyään, joten C1 ei käytä samaa log-mel-esikäsittelyä kuin muut mallit. Fold-jako ja siemen 42 ovat samat. Poikkeus raportoidaan.
+- Git-työnkulku: uusi repo (T01), yksi haara per tehtävä, pull request ja toisen jäsenen katselmointi. Tehtävän varaus pushataan mainiin ennen työn aloitusta (`TASKS.md`).
 - Varadatasetti (Kaggle Animal Sound Dataset) otetaan käyttöön vain, jos ESC-50:n kanssa ilmenee estävä ongelma.
 
 ## Mitattavat tavoitteet
@@ -67,6 +68,26 @@ Ablaatioajot tallennetaan samalla tavalla nimellä `results/ablation_{asetus}_fo
 | Analyysi ja arviointi | 30 % | systemaattinen arviointi, visualisoinnit, vertailu lähestymistapojen välillä, kriittinen pohdinta, perustellut havainnot |
 | Esitys ja dokumentaatio | 20 % | selkeä loppuesitys, laadukas dokumentaatio, yhteistyö ja työnjako, haasteiden ja ratkaisujen kuvaus |
 
+## Arvosana 5 -tarkistuslista
+
+Kurssin tarkkaa arvosanarajausta ei tiedetä, joten lista seuraa tehtävänannon arviointikohtia. Jokaiselle kohdalle on tehtävä ja todiste. Merkitse `[x]`, kun todiste on olemassa ja ryhmä on tarkistanut sen.
+
+| Arviointikohta (paino) | Todiste | Tehtävä | Valmis |
+| --- | --- | --- | --- |
+| Toimiva toteutus ja laadukas esikäsittely (50 %) | `src/data.py`, välimuisti, normalisointi vain opetusdatasta, ei datavuotoa | T04 | [ ] |
+| Selkeä, dokumentoitu koodi (50 %) | Moduulit `src/`, katselmoidut PR:t, README | T01, T24 | [ ] |
+| Järkevä koulutus: hyperparametrit ja regularisointi (50 %) | KerasTuner-haku, callbackit, perustelut raportissa | T06, T11 | [ ] |
+| Tekniset haasteet ratkaistu (50 %) | Haasteet ja ratkaisut raportissa | T21 | [ ] |
+| Systemaattinen arviointi (30 %) | 5-fold-tulokset, keskiarvo ± keskihajonta, ablaatio | T13–T17 | [ ] |
+| Visualisoinnit (30 %) | Taulukko, confusion matrixit, oppimiskuvaajat | T18 | [ ] |
+| Lähestymistapojen vertailu (30 %) | A, B, C1, C2 samalla jaolla | T18 | [ ] |
+| Kriittinen pohdinta ja perustelut (30 %) | Virheanalyysi, Grad-CAM, saavuttamattomien tavoitteiden perustelu | T19, T21 | [ ] |
+| Selkeä esitys (20 %) | Harjoiteltu 10–15 min esitys, demo | T20, T23 | [ ] |
+| Dokumentaation laatu (20 %) | Raportti 3–5 s, notebookit `.ipynb` ja `.html` | T21, T24 | [ ] |
+| Yhteistyö ja työnjako (20 %) | Git-historia, `ottaja`-kentät, työnjako raportissa | kaikki, T21 | [ ] |
+| Haasteet ja epäonnistumiset kuvattu (20 %) | Oma osio raportissa | T21 | [ ] |
+| Tekoälyn käyttö dokumentoitu | AI-loki ja raportin liite | T22 | [ ] |
+
 ## Välitavoitteet
 
 | Päivä | Välitavoite |
@@ -88,3 +109,4 @@ Kirjaa tähän kaikki suunnitelmaan tehdyt muutokset (päivä, mitä muuttui, mi
 | 24.11.2026 | Validointijoukoksi yksi kokonainen opetusfoldi | Tehtävänanto vaatii train/validation/test-jaon, ja EarlyStopping ja KerasTuner tarvitsevat validointidataa ilman datavuotoa | Ryhmä (pyysi Veijo), toteutti Claude |
 | 24.11.2026 | C1 saa poikkeuksen esikäsittelyyn (16 kHz, YAMNetin oma) | YAMNet ei käytä samaa log-melia kuin muut mallit | Ryhmä (pyysi Veijo), toteutti Claude |
 | 24.11.2026 | Lisätty valmiin määritelmään suunnitelman hyväksyntä ja raportin lisäosiot | Tehtävänanto: hyväksyntä viikolla 5, raportin vaaditut osiot | Ryhmä (pyysi Veijo), toteutti Claude |
+| 24.11.2026 | Uusi repo, haara per tehtävä ja PR toisen jäsenen katselmoinnilla; arvosana 5 -tarkistuslista | Neljän hengen yhteistyö ilman konflikteja ja arviointikohtien seuranta | Veijo valitsi Clauden ehdotuksista. Ryhmän pitää vahvistaa |

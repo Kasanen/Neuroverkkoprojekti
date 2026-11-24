@@ -24,11 +24,25 @@ Mitattavat tavoitteet ovat `PLAN.md`:ssä. Arviointi: tekninen toteutus 50 %, an
 
 ## Työnkulku
 
-1. Istunnon alussa: lue `TASKS.md` ja `PLAN.md`, aja `python scripts/check_project.py` ja kerro lyhyesti tilanne. Skripti syntyy vasta tehtävässä T25. Kun sitä ei vielä ole, sano se äläkä väitä tarkistusta tehdyksi.
-2. Ota tehtävä vain, jos sen `vaatii`-tehtävät ovat `valmis`. Kirjoita `ottaja` ja vaihda `tila: työn alla`.
-3. Kun tehtävä on valmis: `tila: valmis`, `[x]`, ja aja tarkistusskripti uudelleen.
-4. Älä muokkaa toisen `työn alla` -tehtävää äläkä muuta tehtävien numeroita.
-5. Kirjaa tekoälyn käyttö `TASKS.md`:n AI-lokiin heti.
+Ryhmässä on 4 jäsentä, ja jokainen käyttää omaa Claude-istuntoaan. Claude ei muista edellisiä istuntoja, joten ajantasainen tila on aina gitissä: `TASKS.md`, `PLAN.md` ja git-historia.
+
+**Istunnon alussa**
+1. Aja `git pull` ja `git log -10 --oneline`, lue `TASKS.md` ja `PLAN.md`.
+2. Kysy käyttäjän nimi (Elias, Miska, Veijo tai Taif), jos se ei ilmene. Git-käyttäjänimi ei kerro sitä. Käytä nimeä `ottaja`-kentässä ja AI-lokissa.
+3. Aja `python scripts/check_project.py` ja kerro lyhyesti tilanne. Skripti syntyy vasta tehtävässä T25. Kun sitä ei vielä ole, sano se äläkä väitä tarkistusta tehdyksi.
+
+**Tehtävän aikana**
+4. Ota tehtävä vain, jos sen `vaatii`-tehtävät ovat `valmis` ja `tila` on `vapaa` pullin jälkeen. Varaus (`ottaja`, `tila: työn alla`) commitoidaan ja pushataan heti omana pienenä commitina mainiin. Vasta sitten luodaan haara `T07-malli-a` (tehtävän numero + lyhyt nimi).
+5. Työ tehdään omassa haarassa, ja valmis työ tulee mainiin pull requestilla. Toinen jäsen katselmoi sen. Älä pushaa suoraan mainiin muuta kuin varausta.
+6. Älä muokkaa toisen `työn alla` -tehtävää äläkä muuta tehtävien numeroita.
+
+**Kun tehtävä on valmis**
+7. Samassa PR:ssä: `tila: valmis`, `[x]`, AI-lokirivi ja tarvittaessa `PLAN.md`:n muutosloki. Aja tarkistusskripti uudelleen.
+8. Kirjaa tekoälyn käyttö `TASKS.md`:n AI-lokiin heti, älä vasta lopuksi.
+9. Lopuksi tarkista, ettei mikään jäänyt päivittämättä: tehtävän tila, AI-loki ja muutosloki.
+
+**Suunnitelman muutokset**
+10. Älä muuta `PLAN.md`:n tavoitteita, rajausta tai kynnyksiä itse. Ehdota muutos käyttäjälle, ja kirjaa se muutoslokiin vasta, kun ryhmä on päättänyt (päättäjä-sarake).
 
 ## Tekniset säännöt (tarkista aina)
 
@@ -40,7 +54,8 @@ Mitattavat tavoitteet ovat `PLAN.md`:ssä. Arviointi: tekninen toteutus 50 %, an
 - **Tulokset yhteiseen muotoon**: `results/{malli}_fold{k}.json` (kentät `PLAN.md`:ssä). Mallit `models/{malli}_fold{k}.keras`.
 - **Callbackit**: EarlyStopping (`restore_best_weights=True`), ModelCheckpoint, ReduceLROnPlateau, CSVLogger.
 - **Keras 3**: `hub.KerasLayer` ei toimi, joten YAMNet ajetaan `hub.load`-funktiolla mallin ulkopuolella.
-- Älä commitoi dataa tai isoja välimuistitiedostoja. Pidä `data/` ja `.npy`-tiedostot `.gitignore`ssa.
+- Älä commitoi dataa tai isoja välimuistitiedostoja. Pidä `data/`, `models/` ja `.npy`-tiedostot `.gitignore`ssa. Ne jaetaan Drivessa. Pienet `results/*.json`-tiedostot commitoidaan.
+- **Notebookit**: `.ipynb` ei yhdisty gitissä kunnolla. Logiikka on `src/`:ssä, notebookissa vain ajot, taulukot ja kuvat. Tyhjennä tulosteet ennen committia (lopulliset notebookit poikkeus). Yksi henkilö muokkaa samaa notebookia kerrallaan.
 
 ## Kurssin säännöt tekoälystä
 
@@ -51,4 +66,4 @@ Tekoälyn käyttö on sallittu myös dokumentaatiossa ja raportissa, mutta:
 
 ## Kommunikointi
 
-Vastaa suomeksi. Ole tiivis ja konkreettinen. Kun pyydetään "tarkistus", käy läpi: tehtävien tila aikatauluun nähden, tavoitteet joita ei ole vielä saavutettu ja puuttuvat palautettavat.
+Vastaa suomeksi. Ole tiivis ja konkreettinen. Kun pyydetään "tarkistus", käy läpi: tehtävien tila aikatauluun nähden, tavoitteet joita ei ole vielä saavutettu, puuttuvat palautettavat ja `PLAN.md`:n arvosana 5 -tarkistuslista (merkitse puuttuvat todisteet). Älä väitä arvosanaa, koska kurssin tarkkaa arvosanarajausta ei tiedetä.
